@@ -1,8 +1,9 @@
-# React + Vite
+# Budget App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project's main goal is to practice ReactJs for myself. However, this Budget App will help you map your budget in everyday spending or monthly spending. It's basically like a calculator that only can add and subtract.
 
-Currently, two official plugins are available:
+# [/dove-budgetcalc](https://dove-budgetcalc.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Built with
+
+- React (Vite)
