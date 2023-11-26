@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 body {
   background: linear-gradient(rgba(9, 10, 31, 0.73), rgba(9, 10, 31, 0.73)), url(https://images.pexels.com/photos/6328941/pexels-photo-6328941.jpeg) no-repeat;
   background-size: cover;
+  font-family: 'Outfit', sans-serif;
 }
 
 .cont {
   height: 100vh;
+}
+
+.main-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
 }
