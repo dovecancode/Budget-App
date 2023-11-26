@@ -1,10 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from 'react-bootstrap'
+
+import HeaderAppTitle from './components/HeaderAppTitle'
 
 function App() {
   return (
-    <>
-      <h1>Hello Budget App</h1>
-    </>
+    <div className="cont d-flex justify-content-center align-items-center">
+      <Container>
+        <HeaderAppTitle />
+      </Container>
+    </div>
   )
 }
 

@@ -1,0 +1,8 @@
+body {
+  background: linear-gradient(rgba(9, 10, 31, 0.73), rgba(9, 10, 31, 0.73)), url(https://images.pexels.com/photos/6328941/pexels-photo-6328941.jpeg) no-repeat;
+  background-size: cover;
+}
+
+.cont {
+  height: 100vh;
+}
