@@ -17,7 +17,7 @@ function TheLayout() {
         </Col>
         <Col lg={6} md="auto">
           <ExpenseIndicator variant="primary" text={`Budget: ${totalBudget > 0 ? '₱ ' : '₱ 0'} ${totalBudget}`} />
-          <ExpenseIndicator variant="success" text={`Budget Left: ${expense > 0 ? '₱ ' : '₱ 0'} ${expense}`} />
+          <ExpenseIndicator variant="success" />
         </Col>
       </Row>
     </>
