@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap'
 import BudgetForm from '../components/BudgetForm'
 import ExpenseForm from '../components/ExpenseForm'
 import ExpenseIndicator from '../components/ExpenseIndicator'
+import ExpensList from '../components/ExpenseList'
 
 function TheLayout() {
   const [totalBudget, setTotalBudget] = useState(0)
@@ -23,6 +24,7 @@ function TheLayout() {
         <Col lg={6} className="ps-4">
           <ExpenseIndicator variant="primary" budget={`Budget: ${totalBudget > 0 ? `₱ ${totalBudget}` : '₱ 0'}`} />
           <ExpenseIndicator variant="success" budgetLeft={`Budget Left: ₱ ${budgetLeftAmount === totalBudget ? '0' : budgetLeftAmount}`} />
+          <ExpensList expenses={expenses} />
         </Col>
       </Row>
     </>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
@@ -45,6 +46,10 @@ function ExpenseForm({ onSetExpense }) {
       </Button>
     </Form>
   )
+}
+
+ExpenseForm.propTypes = {
+  onSetExpense: PropTypes.func,
 }
 
 export default ExpenseForm

@@ -7,7 +7,7 @@ function BudgetForm({ onSetBudget }) {
   const input = useRef(null)
 
   useEffect(() => {
-    input.current.focus
+    input.current.focus()
   }, [])
 
   function handleSubmit(e) {
