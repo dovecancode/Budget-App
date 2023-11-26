@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 function BudgetForm({ onSetBudget }) {
   const [budget, setBudget] = useState('')
+
+  const input = useRef(null)
+
+  useEffect(() => {
+    input.current.focus
+  }, [])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -24,6 +30,7 @@ function BudgetForm({ onSetBudget }) {
           value={budget}
           type="text"
           placeholder="Eg. 1000"
+          ref={input}
           onChange={(e) => {
             setBudget(e.target.value)
           }}

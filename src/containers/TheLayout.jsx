@@ -15,12 +15,12 @@ function TheLayout() {
   return (
     <>
       <Row>
-        <Col lg={6} md="auto">
+        <Col lg={6} className="pe-4">
           {totalBudget ? null : <BudgetForm onSetBudget={setTotalBudget} />}
 
           <ExpenseForm onSetExpense={setExpenses} />
         </Col>
-        <Col lg={6} md="auto">
+        <Col lg={6} className="ps-4">
           <ExpenseIndicator variant="primary" budget={`Budget: ${totalBudget > 0 ? `₱ ${totalBudget}` : '₱ 0'}`} />
           <ExpenseIndicator variant="success" budgetLeft={`Budget Left: ₱ ${budgetLeftAmount === totalBudget ? '0' : budgetLeftAmount}`} />
         </Col>

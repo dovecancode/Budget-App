@@ -16,7 +16,7 @@ function ExpenseForm({ onSetExpense }) {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className="mb-4">
       <h2>Add your Expenses here...</h2>
       <Form.Group className="my-3">
         <Form.Control

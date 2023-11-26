@@ -3,7 +3,11 @@ import { Alert } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 function ExpenseIndicator({ variant, budget, budgetLeft }) {
-  return <Alert variant={variant}>{budget || budgetLeft}</Alert>
+  return (
+    <Alert variant={variant} className="py-2 fw-bold">
+      {budget || budgetLeft}
+    </Alert>
+  )
 }
 
 ExpenseIndicator.propTypes = {
