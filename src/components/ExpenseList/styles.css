@@ -1,0 +1,24 @@
+.tHeader {
+  width: 100%;
+  background: #212529;
+  color: #fff;
+}
+.theaderItem {
+  font-size: 1.2rem;
+}
+
+.theaderItem > *,
+.tRow > * {
+  width: 30%;
+}
+
+.tRow {
+  font-size: 1.1rem;
+}
+
+.noContent {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

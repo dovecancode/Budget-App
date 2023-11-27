@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 
 function ExpenseItem({ expense }) {
-  console.log(expense)
+  const { item, price } = expense
   return (
-    <tr>
-      <td>Pork</td>
-      <td>300</td>
-    </tr>
+    <div className="tRow d-flex py-2 px-1">
+      <div>{item}</div>
+      <div>{price}</div>
+    </div>
   )
 }
 

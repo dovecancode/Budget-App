@@ -1,25 +1,30 @@
 import PropTypes from 'prop-types'
-import { Table } from 'react-bootstrap'
+import ExpenseItem from '../ExpenseItem'
+import './styles.css'
 function ExpensList({ expenses }) {
   const isExpenses = expenses.length === 0
 
   return (
-    <div>
-      <p className="h3">List</p>
-      <hr />
+    <>
+      <div>
+        <p className="h3">List</p>
+        <hr />
+      </div>
+      <div className="tHeader py-2 px-2">
+        <div className="theaderItem d-flex">
+          <div>Item</div>
+          <div>Price</div>
+        </div>
+      </div>
 
-      <Table>
-        <thead className="table-dark">
-          <tr>
-            <th scope="col">Expence Items</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>Helo</tr>
-        </tbody>
-      </Table>
-    </div>
+      {isExpenses ? (
+        <div className="noContent">
+          <p className="lead">No expenses yet please add</p>
+        </div>
+      ) : (
+        expenses.map((expense) => <ExpenseItem key={expense.id} expense={expense} />)
+      )}
+    </>
   )
 }
 
