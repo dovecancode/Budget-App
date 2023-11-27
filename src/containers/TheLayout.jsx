@@ -41,7 +41,7 @@ function TheLayout() {
 
           {/* <BudgetForm onSetBudget={setTotalBudget} /> */}
 
-          <ExpenseForm onSetExpense={setExpenses} />
+          <ExpenseForm onSetExpense={setExpenses} totalBudget={totalBudget} />
         </Col>
         <Col lg={6} className="ps-4">
           <ExpenseIndicator variant="primary" budget={`Budget: ${totalBudget > 0 ? `₱ ${totalBudget}` : '₱ 0'}`} />

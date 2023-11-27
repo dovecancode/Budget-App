@@ -2,28 +2,12 @@ import PropTypes from 'prop-types'
 import { useEffect, useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
-import { ToastContainer, toast } from 'react-toastify'
+import showMessage from '../../utils/validationMessage'
 
 function BudgetForm({ onSetBudget }) {
   const [budget, setBudget] = useState('')
 
   const input = useRef(null)
-
-  const showMessage = (msg, status) => {
-    if (status === 'error') {
-      toast.error(msg, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme: 'colored',
-        autoClose: 1500,
-      })
-    } else {
-      toast.success(msg, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme: 'colored',
-        autoClose: 1500,
-      })
-    }
-  }
 
   useEffect(() => {
     input.current.focus()
@@ -32,8 +16,7 @@ function BudgetForm({ onSetBudget }) {
   function handleSubmit(e) {
     e.preventDefault()
     if (!budget || isNaN(budget)) {
-      showMessage('Please enter a budget to procced', 'error')
-      return
+      return showMessage('Please enter a budget to procced', 'error')
     } else {
       onSetBudget(+budget)
       showMessage('Budget submitted')
@@ -58,7 +41,6 @@ function BudgetForm({ onSetBudget }) {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-      <ToastContainer />
     </Form>
   )
 }

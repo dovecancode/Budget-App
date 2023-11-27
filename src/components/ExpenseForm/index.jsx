@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
-function ExpenseForm({ onSetExpense }) {
+import showMessage from '../../utils/validationMessage'
+
+function ExpenseForm({ onSetExpense, totalBudget }) {
   const [itemName, setItemName] = useState('')
   const [itemAmount, setItemAmount] = useState('')
 
@@ -10,7 +11,20 @@ function ExpenseForm({ onSetExpense }) {
     e.preventDefault()
     const newExpenseItem = { id: crypto.randomUUID(), item: itemName, price: +itemAmount }
 
+    let itemNameCapitalize = itemName[0].toUpperCase() + itemName.substring(1, itemName.length)
+
+    if (!totalBudget) return showMessage('Please provide your budget first', 'error')
+    if (!itemName && !itemAmount) return showMessage('Please add item and amount', 'error')
+
+    if (!itemName) return showMessage('Forgot to inlude the item name?', 'error')
+
+    if (!itemAmount) return showMessage('Forgot to inlude the item price?', 'error')
+
+    if (isNaN(itemAmount)) return showMessage('Please provide a valid price', 'error')
+
     onSetExpense((prev) => [...prev, newExpenseItem])
+
+    showMessage(`${itemNameCapitalize} added `)
 
     setItemName('')
     setItemAmount('')
@@ -37,7 +51,7 @@ function ExpenseForm({ onSetExpense }) {
           name="amount"
           value={itemAmount}
           onChange={(e) => {
-            setItemAmount(+e.target.value)
+            setItemAmount(e.target.value)
           }}
         />
       </Form.Group>
@@ -46,10 +60,6 @@ function ExpenseForm({ onSetExpense }) {
       </Button>
     </Form>
   )
-}
-
-ExpenseForm.propTypes = {
-  onSetExpense: PropTypes.func,
 }
 
 export default ExpenseForm
