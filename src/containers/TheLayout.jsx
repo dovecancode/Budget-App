@@ -17,7 +17,7 @@ function TheLayout() {
 
   let stat
   // if percentage get to90 to 100 percent your budget is out
-  if (percentage >= 90) {
+  if (percentage >= 80) {
     stat = 'danger'
     // if percentage get 50 to 90 percent close to burn
   } else if (percentage >= 50) {

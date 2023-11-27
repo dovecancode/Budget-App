@@ -3,6 +3,8 @@ import { Button, Form } from 'react-bootstrap'
 
 import showMessage from '../../utils/validationMessage'
 
+import PropTypes from 'prop-types'
+
 function ExpenseForm({ onSetExpense, totalBudget }) {
   const [itemName, setItemName] = useState('')
   const [itemAmount, setItemAmount] = useState('')
@@ -11,9 +13,8 @@ function ExpenseForm({ onSetExpense, totalBudget }) {
     e.preventDefault()
     const newExpenseItem = { id: crypto.randomUUID(), item: itemName, price: +itemAmount }
 
-    let itemNameCapitalize = itemName[0].toUpperCase() + itemName.substring(1, itemName.length)
-
     if (!totalBudget) return showMessage('Please provide your budget first', 'error')
+
     if (!itemName && !itemAmount) return showMessage('Please add item and amount', 'error')
 
     if (!itemName) return showMessage('Forgot to inlude the item name?', 'error')
@@ -23,6 +24,8 @@ function ExpenseForm({ onSetExpense, totalBudget }) {
     if (isNaN(itemAmount)) return showMessage('Please provide a valid price', 'error')
 
     onSetExpense((prev) => [...prev, newExpenseItem])
+
+    let itemNameCapitalize = itemName[0].toUpperCase() + itemName.substring(1, itemName.length)
 
     showMessage(`${itemNameCapitalize} added `)
 
@@ -60,6 +63,11 @@ function ExpenseForm({ onSetExpense, totalBudget }) {
       </Button>
     </Form>
   )
+}
+
+ExpenseForm.propTypes = {
+  onSetExpense: PropTypes.func,
+  totalBudget: PropTypes.object,
 }
 
 export default ExpenseForm
