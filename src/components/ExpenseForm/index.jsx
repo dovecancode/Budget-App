@@ -58,8 +58,8 @@ function ExpenseForm({ onSetExpense, totalBudget }) {
           }}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="success" type="submit">
+        Add Expense
       </Button>
     </Form>
   )

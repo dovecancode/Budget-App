@@ -39,7 +39,7 @@ function BudgetForm({ onSetBudget }) {
         />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Add Budget
       </Button>
     </Form>
   )
