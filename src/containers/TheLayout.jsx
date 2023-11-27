@@ -39,6 +39,8 @@ function TheLayout() {
         <Col lg={6} className="pe-4">
           {totalBudget ? null : <BudgetForm onSetBudget={setTotalBudget} />}
 
+          {/* <BudgetForm onSetBudget={setTotalBudget} /> */}
+
           <ExpenseForm onSetExpense={setExpenses} />
         </Col>
         <Col lg={6} className="ps-4">
